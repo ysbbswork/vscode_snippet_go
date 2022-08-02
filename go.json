@@ -1,0 +1,39 @@
+{
+	"package main": {
+		"prefix": "main",
+		"body":[
+			"package main\n",
+			"import (",
+			"\t\"fmt\"",
+			"\t$1",
+			")\n",
+			"func main() {",
+			"\t$2",
+			"}",
+		],
+		"description": "short for package main"
+	},
+	"iferr": {
+		"prefix": "iferr",
+		"body":[
+			"if err != nil {",
+			"\t$1",
+			"}",
+		],
+		"description": "short for if err"
+	},
+	"//gomock": {
+		"prefix": "//gomock",
+		"body": [
+			"//go:generate mockgen -source api.go -destination api_mock.go -package $1",
+		],
+		"description": "short for mockgen"
+	},
+	"//gotest": {
+		"prefix": "//gotest",
+		"body": [
+			"//go:generate gotests -w -all $1",
+		],
+		"description": "short for gotest"
+	}
+}
